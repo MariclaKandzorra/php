@@ -1,0 +1,15 @@
+<?php
+
+$pdo = new PDO('mysql:host=localhost;dbname=blog', "root", "");
+$query = $pdo->query("SELECT COUNT(*) FROM posts");
+$results = $query->fetchAll();
+echo "<ul>";
+foreach($results as $row) {
+	echo "<li>" . $row['COUNT(*)'] . "</li>";
+}
+echo "</ul>";
+echo "<pre>";
+print_r();
+echo "</pre>;
+
+?>
